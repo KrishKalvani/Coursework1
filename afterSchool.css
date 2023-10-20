@@ -1,6 +1,10 @@
+body{
+    margin: 0;
+}
 #navigation{
     height:10%;
     width:100%;
+    
     
 }
 
