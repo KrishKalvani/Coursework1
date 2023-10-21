@@ -14,15 +14,18 @@
             <!-- <header>
                 <h1 v-text="sitename"></h1>
             </header> -->
-            <main>
-                <figure>
-                    <img id="lesson1" v-bind:src="lesson.image">
-                </figure>
-                <p v-text="lesson.subject"></p>
-                <p v-text="lesson.location"></p>
-                <p>Price in AED: {{lesson.price}}</p>
-                <p v-text="lesson.spaces"></p>
+            <div id="lesson1Card">
+            <figure>
+                <img id="lesson1Pic" v-bind:src="lesson.image">
+            </figure>
+            <main id="lesson1Content">
+                <p>Subject: {{lesson.subject}}</p>
+                <p>Location: {{lesson.location}}</p>
+                <p>Price (AED): {{lesson.price}}</p>
+                <p>Spaces: {{lesson.spaces}}</p>
+                <button id="addtocartButton" v-on:click="addToCart">Add to Cart</button>
             </main>
+            </div>
 
             <main>
                 <figure>

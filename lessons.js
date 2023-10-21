@@ -8,7 +8,7 @@ let webstore = new Vue({
             subject: "Math",
             location: "London",
             price: 20,
-            spaces: 0
+            spaces: 5
 
         },
         lesson2: {
