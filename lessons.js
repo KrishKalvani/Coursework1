@@ -17,7 +17,7 @@ let webstore = new Vue({
             subject: "Biology",
             location: "London",
             price: 25,
-            spaces: 0
+            spaces: 5
         }
     }
 })

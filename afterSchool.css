@@ -15,7 +15,7 @@ body{
     margin-top: -3.5%;
     
 }
-
+/* lesson 1 card */
 #lesson1Pic{
     height: 40%;
     width: 40%;
@@ -46,4 +46,28 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: #9692f7;
+}
+
+/* lesson 2 card */
+#lesson2Pic{
+    height: 40%;
+    width: 40%;
+    margin-left:-10%;
+    margin-top: 3%;
+}
+
+#lesson2Content{
+    margin-left: 50%;
+    margin-top:-31%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#lesson2Card{
+    border:1px solid black;
+    width: 20%;
+    height: 30%;
+    margin-left: 30%;
+    margin-top:-14%;
+    background-color: #e6edbe;
 }
