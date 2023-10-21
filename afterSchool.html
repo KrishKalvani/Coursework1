@@ -9,9 +9,38 @@
             <img id="logo" src="../Coursework1/images/cw1logo.png">
         </div>
         <div id="app">
-            <h3 style="margin-left: 2%;">Hello! Buy any subject you want:</h3>
+            <h3 style="margin-left: 2%;">Hello! Buy any lesson you want:</h3>
+            <!-- <header>
+                <h1 v-text="sitename"></h1>
+            </header> -->
+            <main>
+                <figure>
+                    <img id="lesson1" v-bind:src="lesson.image">
+                </figure>
+                <p v-text="lesson.subject"></p>
+                <p v-text="lesson.location"></p>
+                <p>Price in AED: {{lesson.price}}</p>
+                <p v-text="lesson.spaces"></p>
+            </main>
 
         </div>
+        <script type="text/javascript">
+            let webstore= new Vue({
+                el: '#app',
+                data:{
+                        sitename:'AfterSchool',
+                        lesson:{
+                            id: 1001,
+                            image:"images/MathIcon.jpg",
+                            subject:"Math",
+                            location: "London",
+                            price:20,
+                            spaces:0
+                            
+                        }
+                }
+            })
+        </script>
 
     </body>
 
