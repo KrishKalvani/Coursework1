@@ -2,6 +2,7 @@
     <head>
         <title>After School</title>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        
         <link rel="stylesheet" href="../Coursework1/afterSchool.css">
     </head>
     <body>
@@ -23,24 +24,19 @@
                 <p v-text="lesson.spaces"></p>
             </main>
 
+            <main>
+                <figure>
+                    <img id="lesson2" v-bind:src="lesson2.image">
+                </figure>
+                <p v-text="lesson2.subject"></p>
+                <p v-text="lesson2.location"></p>
+                <p>Price in AED: {{lesson2.price}}</p>
+                <p v-text="lesson2.spaces"></p>
+            </main>
+
+
         </div>
-        <script type="text/javascript">
-            let webstore= new Vue({
-                el: '#app',
-                data:{
-                        sitename:'AfterSchool',
-                        lesson:{
-                            id: 1001,
-                            image:"images/MathIcon.jpg",
-                            subject:"Math",
-                            location: "London",
-                            price:20,
-                            spaces:0
-                            
-                        }
-                }
-            })
-        </script>
+        <script src="../Coursework1/lessons.js"></script>
 
     </body>
 
