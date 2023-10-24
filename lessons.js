@@ -18,8 +18,16 @@ let webstore = new Vue({
           location: "London",
           price: 25,
           spaces: 5
+        },
+        {
+          id: 1003,
+          image:"images/chemistryIcon.png",
+          subject: "Chemistry",
+          location: "Oxford",
+          price: 30,
+          spaces: 5
         }
-        // Add more lessons here if needed
+        
       ]
     },
     methods: {
