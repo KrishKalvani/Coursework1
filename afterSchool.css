@@ -2,40 +2,41 @@ body{
     margin: 0;
 }
 #navigation{
-    height:10%;
+    height:70px;
     width:100%;
     
     
 }
 
 #logo{
-    height:250%;
-    width: 12%;
+    height:200px;
+    width: 9%;
     margin-left:45%;
-    margin-top: -3.5%;
+    margin-top: -4%;
     
 }
 /* lesson 1 card */
-#lesson1Pic{
+#lessonPic{
     height: 40%;
     width: 40%;
     margin-left:-5%;
     margin-top: 3%;
 }
 
-#lesson1Content{
+#lessonContent{
     margin-left: 50%;
     margin-top:-31%;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 
-#lesson1Card{
+#lessonCard{
     border:1px solid black;
     width: 20%;
     height: 30%;
     margin-left: 5%;
     background-color: #e6edbe;
+    
 }
 
 #addtocartButton{
@@ -49,7 +50,7 @@ body{
 }
 
 /* lesson 2 card */
-#lesson2Pic{
+/* #lesson2Pic{
     height: 40%;
     width: 40%;
     margin-left:-10%;
@@ -70,4 +71,4 @@ body{
     margin-left: 30%;
     margin-top:-14%;
     background-color: #e6edbe;
-}
+} */

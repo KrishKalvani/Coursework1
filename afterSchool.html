@@ -1,49 +1,33 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>After School</title>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
-        
-        <link rel="stylesheet" href="../Coursework1/afterSchool.css">
-    </head>
-    <body>
-        <div id="navigation" style="background-color: #110d78;">
-            <img id="logo" src="../Coursework1/images/cw1logo.png">
+  <head>
+    <title>After School</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="../Coursework1/afterSchool.css">
+  </head>
+  <body>
+    <div id="navigation" style="background-color: #110d78;">
+      <img id="logo" src="../Coursework1/images/cw1logo.png">
+    </div>
+    <div id="app">
+      <h3 style="margin-left: 2%;">Hello! Buy any lesson you want:</h3>
+
+      <div v-for="lesson in lessons" :key="lesson.id">
+        <div id="lessonCard">
+          <figure>
+            <img id="lessonPic" v-bind:src="lesson.image">
+          </figure>
+          <main id="lessonContent">
+            <p>Subject: {{ lesson.subject }}</p>
+            <p>Location: {{ lesson.location }}</p>
+            <p>Price (AED): {{ lesson.price }}</p>
+            <p>Spaces: {{ lesson.spaces }}</p>
+            <button id="addtocartButton" v-on:click="addToCart(lesson)">Add to Cart</button>
+          </main>
         </div>
-        <div id="app">
-            <h3 style="margin-left: 2%;">Hello! Buy any lesson you want:</h3>
-            <!-- <header>
-                <h1 v-text="sitename"></h1>
-            </header> -->
-            <div id="lesson1Card">
-            <figure>
-                <img id="lesson1Pic" v-bind:src="lesson.image">
-            </figure>
-            <main id="lesson1Content">
-                <p>Subject: {{lesson.subject}}</p>
-                <p>Location: {{lesson.location}}</p>
-                <p>Price (AED): {{lesson.price}}</p>
-                <p>Spaces: {{lesson.spaces}}</p>
-                <button id="addtocartButton" v-on:click="addToCart">Add to Cart</button>
-            </main>
-            </div>
+      </div>
 
-            <div id="lesson2Card">
-                <figure>
-                    <img id="lesson2Pic" v-bind:src="lesson2.image">
-                </figure>
-                <main id="lesson2Content">
-                    <p>Subject: {{lesson2.subject}}</p>
-                    <p>Location: {{lesson2.location}}</p>
-                    <p>Price (AED): {{lesson2.price}}</p>
-                    <p>Spaces: {{lesson2.spaces}}</p>
-                    <button id="addtocartButton" v-on:click="addToCart">Add to Cart</button>
-                </main>
-                </div>
-
-
-        </div>
-        <script src="../Coursework1/lessons.js"></script>
-
-    </body>
-
+    </div>
+    <script src="../Coursework1/lessons.js"></script>
+  </body>
 </html>
