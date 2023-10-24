@@ -89,8 +89,7 @@ let webstore = new Vue({
     },
     methods: {
       addToCart(lesson) {
-        // Implement your addToCart logic here
-        // You can access the selected lesson using the 'lesson' parameter
+        
         console.log("Added to cart:", lesson);
       }
     }

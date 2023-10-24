@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background: linear-gradient(to bottom, #ff9900, #ff66cc);
 }
 #navigation{
     height:70px;
@@ -27,6 +28,12 @@ body{
     font-size: 50px;
     margin-left: 1%;
     text-align: center;
+    color: white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+    /* background: linear-gradient(to bottom, #ff9900, #ff66cc);
+    color: transparent; */
+    
 }
 
 #logo{
