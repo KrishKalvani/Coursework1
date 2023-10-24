@@ -7,12 +7,18 @@
   </head>
   <body>
     <div id="navigation" style="background-color: #110d78;">
+        <!-- <div id="homeButton">HOME</div>
+        <div id="lessonsButton">LESSONS</div> -->
       <img id="logo" src="../Coursework1/images/cw1logo.png">
     </div>
     <div id="app">
-      <h3 style="margin-left: 2%;">Hello! Buy any lesson you want:</h3>
+      <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3>
+      <br><br>
+      <!-- <div id="homePageContent">
+     
+      </div> -->
 
-      <div v-for="lesson in lessons" :key="lesson.id">
+      <div id="lessonsPageContent" v-for="lesson in lessons" :key="lesson.id">
         <div id="lessonCard">
           <figure>
             <img id="lessonPic" v-bind:src="lesson.image">
