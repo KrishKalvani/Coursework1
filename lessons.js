@@ -8,7 +8,7 @@ let webstore = new Vue({
           image: "images/MathIcon.jpg",
           subject: "Math",
           location: "London",
-          price: 20,
+          price: 100,
           spaces: 5
         },
         {
@@ -16,7 +16,7 @@ let webstore = new Vue({
           image: "images/bioIcon.png",
           subject: "Biology",
           location: "London",
-          price: 25,
+          price: 90,
           spaces: 5
         },
         {
@@ -24,8 +24,65 @@ let webstore = new Vue({
           image:"images/chemistryIcon.png",
           subject: "Chemistry",
           location: "Oxford",
-          price: 30,
+          price: 150,
           spaces: 5
+        },
+        {
+            id: 1004,
+            image:"images/physIcon.png",
+            subject: "Physics",
+            location: "Oxford",
+            price: 100,
+            spaces: 5
+        },
+        {
+            id:1005,
+            image:"images/MathIcon.jpg",
+            subject: "Math",
+            location: "Oxford",
+            price: 120,
+            spaces: 5
+        },
+        {
+            id: 1006,
+            image:"images/engIcon.png",
+            subject: "English",
+            location: "London",
+            price: 80,
+            spaces: 5
+        },
+        {
+            id:1007,
+            image:"images/musicIcon.png",
+            subject: "Music",
+            location: "Bristol",
+            price: 90,
+            spaces: 5
+        },
+        {
+            id:1008,
+            image:"images/engIcon.png",
+            subject: "English",
+            location: "York",
+            price: 80,
+            spaces: 5
+
+        },
+        {
+            id:1009,
+            image:"images/chemistryIcon.png",
+            subject: "Chemistry",
+            location: "London",
+            price: 100,
+            spaces: 5
+        },
+        {
+            id:1010,
+            image:"images/bioIcon.png",
+            subject: "Biology",
+            location: "Oxford",
+            price: 100,
+            spaces: 5
         }
         
       ]
