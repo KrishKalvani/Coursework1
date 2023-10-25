@@ -6,27 +6,15 @@ body{
     height:70px;
     width:100%;
 }
-/* #homeButton{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    position: absolute;
-    margin-top: 1.5%;
-    margin-left: 2%
 
-}
-#lessonsButton{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    margin-left: 10%;
-    position: absolute;
-    margin-top: 1.5%;
-} */
-
+/* #welcomeContainer {
+    grid-column: 1 / span 5; 
+    text-align: center; 
+    margin-bottom: 10px; 
+  } */
 #welcomeText{
     font-size: 50px;
-    margin-left: 1%;
+    margin-left: 3%;
     text-align: center;
     color: white;
     -webkit-text-stroke-color: black;
@@ -48,12 +36,13 @@ body{
     height: 40%;
     width: 40%;
     margin-left:-160px;
-    margin-top: 3%;
+    margin-top: 50px;
+    
 }
 
 #lessonContent{
     margin-left: 50%;
-    margin-top:-31%;
+    margin-top:-70%;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
@@ -81,25 +70,27 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
   }
-/* #lessonCard {
-    background-color: #e6edbe;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    text-align: center;
-    width: 300px; 
-    margin-left: -100%;
-    margin-top:20%;
+  /* #app {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    
+    grid-gap: 10px; 
   } */
+
   #lessonCard {
     margin: 10px;
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
-    width: 300px; /* Adjust the width as needed */
+    width: 250px;
+    height: 350px; 
     background-color: #e6edbe;
+    display:flex;
+    flex-direction: column;
+  }
+  #lessonCard figure{
+    flex:1;
   }
 
 

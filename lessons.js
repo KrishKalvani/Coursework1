@@ -83,14 +83,15 @@ let webstore = new Vue({
             location: "Oxford",
             price: 100,
             spaces: 5
-        }
+        },
         
-      ]
+        
+      ],
+      cart: []
     },
     methods: {
-      addToCart(lesson) {
-        
-        console.log("Added to cart:", lesson);
-      }
+      addToCart: function(){
+        this.cart.push(this.lessons.id)
+    }
     }
   });
