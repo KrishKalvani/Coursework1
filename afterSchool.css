@@ -128,3 +128,12 @@ body{
     margin-top:-14%;
     background-color: #e6edbe;
 } */
+
+#footer{
+    position: absolute;
+    /* margin-left: 50%; */
+    background-color: #110d78;
+    color: white;
+    font-size: larger;
+    width: 100%;
+}
