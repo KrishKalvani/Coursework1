@@ -3,6 +3,7 @@ body{
     background: linear-gradient(to bottom, #ff9900, #ff66cc);
 }
 #navigation{
+   
     height:70px;
     width:100%;
 }
@@ -27,7 +28,7 @@ body{
 #logo{
     height:200px;
     width: 9%;
-    margin-left:45%;
+    margin-left:1%;
     margin-top: -4.5%;
     
 }
