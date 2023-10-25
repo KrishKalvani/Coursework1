@@ -7,6 +7,15 @@ body{
     height:70px;
     width:100%;
 }
+#searchInput{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 35%;
+    width: 300px; /* Adjust the width as needed */
+    height: 30px;
+    
+    padding: 5px;
+}
 
 /* #welcomeContainer {
     grid-column: 1 / span 5; 
