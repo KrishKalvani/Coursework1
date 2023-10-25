@@ -87,11 +87,24 @@ let webstore = new Vue({
         
         
       ],
-      cart: []
+      cart: [],
+      sortOrder: 'ascending',
     },
     methods: {
       addToCart: function(){
         this.cart.push(this.lessons.id)
-    }
-    }
+    },
+    sortByPrice: function (order) {//order is the parameter where it will either be ascending or descending
+      this.sortOrder = order;
+      this.lessons.sort((a, b) => { //lets assume a and b are the objects (each lesson) in our lessons array, sort performs the ascending 
+        //and descending
+        if (order === 'ascending') {//if order is ascedning...
+          return a.price - b.price;//display the first detected lesson minus the 2nd one
+        } else if (order === 'descending') {// similarly for descending but 2nd lesson minus the 1st
+          return b.price - a.price;
+        }
+        return 0; // this will not display any change if theres no ascending or descending detected
+      });
+    },
+  },
   });

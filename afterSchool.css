@@ -17,6 +17,12 @@ body{
     padding: 5px;
 }
 
+#sortButtons{
+    position: absolute;
+    margin-left:70%;
+    margin-top: 13%;
+}
+
 /* #welcomeContainer {
     grid-column: 1 / span 5; 
     text-align: center; 
