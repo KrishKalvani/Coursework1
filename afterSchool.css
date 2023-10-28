@@ -17,10 +17,15 @@ body{
     padding: 5px;
 }
 
-#sortButtons{
+#sortPriceButtons{
     position: absolute;
     margin-left:70%;
+    margin-top: 11%;
+}
+#sortSubButtons{
+    position: absolute;
     margin-top: 13%;
+    margin-left: 70%;
 }
 
 /* #welcomeContainer {

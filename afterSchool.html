@@ -16,11 +16,13 @@
     </div>
     <div id="app">
       <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3>
-      <div id="sortButtons">
+      <div id="sortPriceButtons">
         <button v-on:click="sortByPrice('ascending')">Sort by Price (Low to High)</button>
         <button v-on:click="sortByPrice('descending')">Sort by Price (High to Low)</button>
-        <button v-on:click="sortAlphabetically('ascending')">Sort by Subject (A to Z)</button>
-        <button v-on:click="sortAlphabetically('descending')">Sort by Subject (Z to A)</button>
+      </div>
+      <div id="sortSubButtons">
+        <button id="sortSubButton" v-on:click="sortAlphabetically('ascending')">Sort by Subject (A to Z)</button>
+        <button id="sortSubButton" v-on:click="sortAlphabetically('descending')">Sort by Subject (Z to A)</button>
       </div>
      
 
