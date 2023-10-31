@@ -24,6 +24,10 @@
         <button id="sortSubButton" v-on:click="sortAlphabetically('ascending')">Sort by Subject (A to Z)</button>
         <button id="sortSubButton" v-on:click="sortAlphabetically('descending')">Sort by Subject (Z to A)</button>
       </div>
+      <div id="sortLocationButtons">
+        <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('ascending')">Sort by Location (A to Z)</button>
+        <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('descending')">Sort by Location (Z to A)</button>
+      </div>
      
 
       <div id="lessonsPageContent" v-for="lesson in lessons" :key="lesson.id">
