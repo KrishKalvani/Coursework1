@@ -54,12 +54,14 @@ body{
 }
 
 #checkOutHeading{
-    font-size: 35px;
+    font-size: 50px;
+    margin-top: 5%;
     margin-left: 3%;
     text-align: left;
     color: white;
     -webkit-text-stroke-color: black;
     -webkit-text-stroke-width: 1.5px;
+    margin-left: 45%;
 
 }
 
@@ -152,6 +154,9 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: #9692f7;
+    /* bottom: 20px;
+    right: 20px; 
+    z-index: 1; */
 
 }
 /* #app {

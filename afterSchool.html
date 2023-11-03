@@ -18,6 +18,7 @@
     <div id="app">
       <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3>
       <div v-if="showLesson">
+        
       <div id="sortPriceButtons">
         <button v-on:click="sortByPrice('ascending')">Sort by Price (Low to High)</button>
         <button v-on:click="sortByPrice('descending')">Sort by Price (High to Low)</button>
@@ -30,6 +31,7 @@
         <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('ascending')">Sort by Location (A to Z)</button>
         <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('descending')">Sort by Location (Z to A)</button>
       </div>
+      
     </div>
       <header>
         <button id="checkOutButton" v-on:click="showCheckout" :disabled="cart.length===0">
