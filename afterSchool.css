@@ -70,7 +70,7 @@ body{
 
 #lessonContent{
     margin-left: 50%;
-    margin-top:-70%;
+    margin-top:-40%;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
@@ -108,7 +108,7 @@ body{
 #checkOutButton{
     position: absolute;
     margin-top:-18.5%;
-    margin-left: 70%;
+    margin-left: 90%;
     height: 8%;
     width: 6%;
     font-family: Arial, Helvetica, sans-serif;
@@ -116,17 +116,24 @@ body{
     background-color: #9692f7;
 
 }
-#app {
+/* #app {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
+  } */
   /* #app {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     
     grid-gap: 10px; 
   } */
+
+  #lessonsGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Change 5 to the number of desired columns */
+    gap: 20px;
+    justify-content: center;
+  }
 
   #lessonCard {
     margin: 10px;
@@ -137,12 +144,12 @@ body{
     width: 250px;
     height: 350px; 
     background-color: #e6edbe;
-    display:flex;
-    flex-direction: column;
+    /* display:flex;
+    flex-direction: column; */
   }
-  #lessonCard figure{
+  /* #lessonCard figure{
     flex:1;
-  }
+  } */
 
 
 
