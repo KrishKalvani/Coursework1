@@ -110,54 +110,72 @@ let webstore = new Vue({
           
         
       },
-        showCheckout(){
-          this.showLesson=this.showLesson ? false:true;
+      showCheckout(){
+        this.showLesson=this.showLesson ? false:true;
+      },
+      canAddToCart: function(lesson){
+        return lesson.spaces>lesson.cartItemCount;
+      },
+      sortByPrice: function(order){//order is the parameter where it will either be ascending or descending
+          this.sortOrder=order;
+          this.lessons.sort((a,b)=>{ //lets assume a and b are the objects (each lesson) in our lessons array, sort performs the ascending 
+            //and descending
+            if(order=== 'ascending'){//if order is ascedning...
+              return a.price-b.price;//display the first detected lesson minus the 2nd one
+            } else if(order==='descending'){// similarly for descending but 2nd lesson minus the 1st
+              return b.price-a.price;
+            }
+            return 0; // this will not display any change if theres no ascending or descending detected
+          });
         },
-        canAddToCart: function(lesson){
-          return lesson.spaces>lesson.cartItemCount;
-        }
+        
+      sortAlphabetically: function (order){
+          this.sortOrder= order;
+          this.lessons.sort((a,b)=>{
+            if(order==='ascending'){
+              return a.subject.localeCompare(b.subject); //localeCompare compares 2 strings and returns a value that shows their order
+              //if one string (A) is before another string (B), it will return a -ve number and sort in ascending order
+            } else if (order==='descending') { //Similar concept for (B) before (A) i.e., descending order
+              return b.location.localeCompare(a.subject);
+            }
+            return 0;
+          });
+        },
+      sortLocationAlphabetically: function (order){
+          this.sortOrder= order;
+          this.lessons.sort((a,b)=>{
+            if(order==='ascending'){
+              return a.location.localeCompare(b.location); //localeCompare compares 2 strings and returns a value that shows their order
+              //if one string (A) is before another string (B), it will return a -ve number and sort in ascending order
+            } else if (order==='descending') { //Similar concept for (B) before (A) i.e., descending order
+              return b.subject.localeCompare(a.location);
+            }
+            return 0;
+          });
+        },
     
     },
-    // sortByPrice: function(order){//order is the parameter where it will either be ascending or descending
-    //   this.sortOrder=order;
-    //   this.lessons.sort((a,b)=>{ //lets assume a and b are the objects (each lesson) in our lessons array, sort performs the ascending 
-    //     //and descending
-    //     if(order=== 'ascending'){//if order is ascedning...
-    //       return a.price-b.price;//display the first detected lesson minus the 2nd one
-    //     } else if(order==='descending'){// similarly for descending but 2nd lesson minus the 1st
-    //       return b.price-a.price;
-    //     }
-    //     return 0; // this will not display any change if theres no ascending or descending detected
-    //   });
-    // },
-    // sortAlphabetically: function (order){
-    //   this.sortOrder= order;
-    //   this.lessons.sort((a,b)=>{
-    //     if(order==='ascending'){
-    //       return a.subject.localeCompare(b.subject); //localeCompare compares 2 strings and returns a value that shows their order
-    //       //if one string (A) is before another string (B), it will return a -ve number and sort in ascending order
-    //     } else if (order==='descending') { //Similar concept for (B) before (A) i.e., descending order
-    //       return b.location.localeCompare(a.location);
-    //     }
-    //     return 0;
-    //   });
-    // },
-    // sortLocationAlphabetically: function (order){
-    //   this.sortOrder= order;
-    //   this.lessons.sort((a,b)=>{
-    //     if(order==='ascending'){
-    //       return a.location.localeCompare(b.location); //localeCompare compares 2 strings and returns a value that shows their order
-    //       //if one string (A) is before another string (B), it will return a -ve number and sort in ascending order
-    //     } else if (order==='descending') { //Similar concept for (B) before (A) i.e., descending order
-    //       return b.subject.localeCompare(a.subject);
-    //     }
-    //     return 0;
-    //   });
-    // },
+    
     computed:{
       cartItemCount: function(){
         return this.cart.length || '';
-      }
+      },
+      
 
-    }
+    },
   });
+
+
+  // computed:{
+  //   sortedProducts(){
+  //     let productdArray= this.products.slice(0);
+  //     function compare(a,b){
+  //       if(a.price>b.price)
+  //       return 1;
+  //     if(a.price<b.price)
+  //     return -1;
+  //   return 0;
+  //     }
+  //     return productdArray.sort(compare)
+  //   }
+  // }
