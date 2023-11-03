@@ -1,6 +1,7 @@
 body{
     margin: 0;
-    background: linear-gradient(to bottom, #ff9900, #ff66cc);
+    background-color:#ff9900 ;
+    /* background: linear-gradient(to bottom, #ff9900, #ff66cc); */
 }
 #navigation{
    
@@ -52,6 +53,43 @@ body{
     
 }
 
+#checkOutHeading{
+    font-size: 35px;
+    margin-left: 3%;
+    text-align: left;
+    color: white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1.5px;
+
+}
+
+#checkoutTable{
+    width: 70%;
+  border-collapse: collapse;
+  border-spacing: 10px;
+  margin-top: 20px;
+  text-align: center;
+  margin-left: 15%;
+}
+
+#checkoutTable th{
+  
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid black
+}
+#checkoutTable td{
+    border: 1px solid black; 
+}
+
+
+#checkoutTable img{
+    float: left;
+    width:70%;
+  height: 70%;
+  
+}
 #logo{
     height:200px;
     width: 9%;
@@ -147,35 +185,6 @@ body{
     /* display:flex;
     flex-direction: column; */
   }
-  /* #lessonCard figure{
-    flex:1;
-  } */
-
-
-
-/* lesson 2 card */
-/* #lesson2Pic{
-    height: 40%;
-    width: 40%;
-    margin-left:-10%;
-    margin-top: 3%;
-}
-
-#lesson2Content{
-    margin-left: 50%;
-    margin-top:-31%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-#lesson2Card{
-    border:1px solid black;
-    width: 20%;
-    height: 30%;
-    margin-left: 30%;
-    margin-top:-14%;
-    background-color: #e6edbe;
-} */
 
 #footer{
     position: absolute;
@@ -184,4 +193,5 @@ body{
     color: white;
     font-size: larger;
     width: 100%;
+    margin-top: 30%;
 }

@@ -58,11 +58,11 @@
       </div>
 
       <div v-else>
-        <h2>Checkout</h2>
-        <table>
+        <h2 id="checkOutHeading">Checkout</h2>
+        <table id="checkoutTable">
           <thead>
             <tr>
-              <th>Image</th>
+              <th></th>
               <th>Subject</th>
               <th>Location</th>
               <th>Price</th>
@@ -71,11 +71,12 @@
           </thead>
           <tbody>
             <tr v-for="item in cartItems" :key="item.id">
-              <td><img :src="item.image" width="20"></td>
+              <td style="width:10%;"><img :src="item.image"></td>
               <td>{{item.subject}}</td>
               <td>{{item.location}}</td>
               <td>{{item.price}}</td>
               <td>{{item.spaces-item.cartItemCount}} left</td>
+              
             </tr>
           </tbody>
         </table>
