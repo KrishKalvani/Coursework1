@@ -59,6 +59,26 @@
 
       <div v-else>
         <h2>Checkout</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Subject</th>
+              <th>Location</th>
+              <th>Price</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in cartItems" :key="item.id">
+              <td><img :src="item.image" width="20"></td>
+              <td>{{item.subject}}</td>
+              <td>{{item.location}}</td>
+              <td>{{item.price}}</td>
+              <td>{{item.spaces-item.cartItemCount}} left</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
     </div>

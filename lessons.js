@@ -99,7 +99,7 @@ let webstore = new Vue({
         
       ],
       cart: [],
-      // sortOrder: 'ascending',
+      sortOrder: 'ascending',
     },
     methods: {
       addToCart: function(lesson){
@@ -157,6 +157,18 @@ let webstore = new Vue({
     },
     
     computed:{
+      cartItems: function(){ //this is a function that is making an array - cartItems of lesson objects
+        // which will contain the IDs (and other details) of the lessons that got added into the cart array
+        return this.cart.map(itemID =>{ //here we 'map' the lessons in the cart array into the arguement itemID.
+          // So for each itemID (lesson ID) in the cart array, the map function will run
+          return this.lessons.find(lesson => lesson.id === itemID)
+          //Inside the map function the 'find' searches for a lesson where 
+          //the lesson.id from the lessons object is equal to the current itemID from the new array made
+        });
+
+        //reference: https://v2.vuejs.org/v2/guide/list
+        
+      },
       cartItemCount: function(){
         return this.cart.length || '';
       },
