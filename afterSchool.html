@@ -37,9 +37,9 @@
         
       </header>
      
-      <div v-if="showLesson">
-      <div id="lessonsPageContent" v-for="lesson in lessons" :key="lesson.id">
-        <div id="lessonCard">
+      <div v-if="showLesson" id="lessonsGrid">
+      <!-- <div id="lessonsPageContent" v-for="lesson in lessons" :key="lesson.id"> -->
+        <div id="lessonCard" v-for="lesson in lessons" :key="lesson.id">
           <figure>
             <img id="lessonPic" v-bind:src="lesson.image">
           </figure>
@@ -52,7 +52,7 @@
             <button id="disabledAddToCartButton" disabled="disabled" v-else>Add to Cart</button>
           </main>
         </div>
-      </div>
+      <!-- </div> -->
       </div>
 
       <div v-else>
