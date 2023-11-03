@@ -20,18 +20,18 @@ body{
 #sortPriceButtons{
     position: absolute;
     margin-left:70%;
-    margin-top: 11%;
+    margin-top: -5%;
 }
 #sortSubButtons{
     position: absolute;
-    margin-top: 13%;
-    margin-left: 70%;
+    margin-top: -3%;
+    margin-left: 71.4%;
 }
 
 #sortLocationButtons{
     position: absolute;
-    margin-top: 9%;
-    margin-left: 70%;
+    margin-top: -1%;
+    margin-left: 71.2%;
 
 }
 
