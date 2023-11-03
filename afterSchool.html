@@ -30,7 +30,7 @@
         <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('descending')">Sort by Location (Z to A)</button>
       </div> -->
       <header>
-        <button v-on:click="showCheckout">
+        <button id="checkOutButton" v-on:click="showCheckout">
           {{cartItemCount}}
           <span class="fas fa-cart-plus">Checkout</span>
       </button>
@@ -49,7 +49,7 @@
             <p>Price (Pounds): {{ lesson.price }}</p>
             <p>Spaces: {{lesson.spaces-lesson.cartItemCount }}</p>
             <button style="margin-bottom: 60px;" id="addtocartButton" v-on:click="addToCart(lesson)" v-if="canAddToCart(lesson)">Add to Cart</button>
-            <button disabled="disabled" v-else>Add to Cart</button>
+            <button id="disabledAddToCartButton" disabled="disabled" v-else>Add to Cart</button>
           </main>
         </div>
       </div>
