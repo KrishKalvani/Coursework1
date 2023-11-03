@@ -51,7 +51,7 @@
             <p>Price (Pounds): {{ lesson.price }}</p>
             <p>Spaces: {{lesson.spaces-lesson.cartItemCount }}</p>
             <button style="margin-bottom: 60px;" id="addtocartButton" v-on:click="addToCart(lesson)" v-if="canAddToCart(lesson)">Add to Cart</button>
-            <button id="disabledAddToCartButton" disabled="disabled" v-else>Add to Cart</button>
+            <button id="disabledAddToCartButton" disabled="disabled" v-else>Sold Out</button>
           </main>
         </div>
       <!-- </div> -->
