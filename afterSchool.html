@@ -4,6 +4,7 @@
     <title>After School</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <link rel="stylesheet" href="../Coursework1/afterSchool.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
   </head>
   <body>
     <div id="navigation" style="background-color: #110d78; ">
@@ -16,7 +17,7 @@
     </div>
     <div id="app">
       <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3>
-      <div id="sortPriceButtons">
+      <!-- <div id="sortPriceButtons">
         <button v-on:click="sortByPrice('ascending')">Sort by Price (Low to High)</button>
         <button v-on:click="sortByPrice('descending')">Sort by Price (High to Low)</button>
       </div>
@@ -27,9 +28,16 @@
       <div id="sortLocationButtons">
         <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('ascending')">Sort by Location (A to Z)</button>
         <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('descending')">Sort by Location (Z to A)</button>
-      </div>
+      </div> -->
+      <header>
+        <button v-on:click="showCheckout">
+          {{cartItemCount}}
+          <span class="fas fa-cart-plus">Checkout</span>
+      </button>
+        
+      </header>
      
-
+      <div v-if="showLesson">
       <div id="lessonsPageContent" v-for="lesson in lessons" :key="lesson.id">
         <div id="lessonCard">
           <figure>
@@ -39,10 +47,16 @@
             <p>Subject: {{ lesson.subject }}</p>
             <p>Location: {{ lesson.location }}</p>
             <p>Price (Pounds): {{ lesson.price }}</p>
-            <p>Spaces: {{ lesson.spaces }}</p>
-            <button style="margin-bottom: 60px;" id="addtocartButton" v-on:click="addToCart">Add to Cart</button>
+            <p>Spaces: {{lesson.spaces-lesson.cartItemCount }}</p>
+            <button style="margin-bottom: 60px;" id="addtocartButton" v-on:click="addToCart(lesson)" v-if="canAddToCart(lesson)">Add to Cart</button>
+            <button disabled="disabled" v-else>Add to Cart</button>
           </main>
         </div>
+      </div>
+      </div>
+
+      <div v-else>
+        <h2>Checkout</h2>
       </div>
 
     </div>
