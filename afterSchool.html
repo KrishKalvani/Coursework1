@@ -78,6 +78,7 @@
               <td>{{item.location}}</td>
               <td>{{item.price}}</td>
               <td>{{item.spaces-item.cartItemCount}} left</td>
+              <td><button v-on:click="removeLessonFromCart(item)">Remove</button></td>
               
             </tr>
           </tbody>

@@ -153,6 +153,22 @@ let webstore = new Vue({
             return 0;
           });
         },
+
+        removeLessonFromCart(lesson){
+          //this function is used for removing lessons from the cart
+          let lessonIndexInCart=this.cart.indexOf(lesson.id);//this is finding the index of the lesson thats in the cart
+          //and stored in the lessonIndexInCart variable
+          if(lessonIndexInCart!==-1){//if the lesson is IN the cart, then we splice to remove it
+            this.cart.splice(lessonIndexInCart,1);
+            let lessonInLesson=this.lessons.find((lessonInCart)=> lessonInCart.id === lesson.id );
+            //this line searches for the same lesson added in the lessons array (after removing it) using the ID and it stores it in lessonInLessons
+            if(lessonInLesson){//if that lesson is in the array then decrease the cartItemCount which hence increases the spaces.
+              lessonInLesson.cartItemCount--;
+            }
+          }
+        },
+
+
     
     },
     
