@@ -172,6 +172,13 @@ let webstore = new Vue({
       cartItemCount: function(){
         return this.cart.length || '';
       },
+      cartTotalPrice: function(){
+        return this.cartItems.reduce((total, item)=> total+item.price,0);
+        //this function calculates the total price of the lessons that are in the cart
+        //the reduce function iterates over the cartItems array and adds the price values.
+        //it uses total and item as the 2 arguements
+        //reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+      },
       
 
     },
