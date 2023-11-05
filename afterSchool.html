@@ -98,7 +98,7 @@
         <h2>Order Information</h2>
         <p>Name: {{order.name}}</p>
         <p>Phone Number: {{order.phone}}</p>
-        <button v-on:click="submitForm">Place Order</button>
+        <button v-on:click="submitForm" :disabled="!credentialsValidation">Place Order</button>
       </div>
 
     </div>

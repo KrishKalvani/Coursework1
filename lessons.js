@@ -5,7 +5,7 @@ let webstore = new Vue({
       showLesson:true,
       order:{
         name:'',
-        phone:0
+        phone:null
 
       },
       lessons: [
@@ -204,6 +204,16 @@ let webstore = new Vue({
         //it uses total and item as the 2 arguements
         //reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
       },
+
+      nameValidation: function(){
+        return /^[A-Za-z\s]+$/.test(this.order.name);
+      },
+      phoneValidation: function(){
+        return /^[0-9]+$/.test(this.order.phone);
+      },
+      credentialsValidation: function(){
+        return this.nameValidation && this.phoneValidation;
+      }
       
 
     },
