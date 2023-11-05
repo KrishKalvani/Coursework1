@@ -84,6 +84,21 @@
           </tbody>
         </table>
         <h3 style="margin-left:65%;">Total Price (Pounds): {{cartTotalPrice}}</h3>
+
+        <!--customer credentials-->
+        <p>
+          <strong>Name:</strong>
+          <input v-model.trim="order.name">
+        </p>
+        <p>
+          <strong>Phone Number:</strong>
+          <input v-model.trim="order.phone">
+        </p>
+
+        <h2>Order Information</h2>
+        <p>Name: {{order.name}}</p>
+        <p>Phone Number: {{order.phone}}</p>
+        <button v-on:click="submitForm">Place Order</button>
       </div>
 
     </div>

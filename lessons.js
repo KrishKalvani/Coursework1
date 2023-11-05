@@ -3,6 +3,11 @@ let webstore = new Vue({
     data: {
       sitename: 'AfterSchool',
       showLesson:true,
+      order:{
+        name:'',
+        phone:0
+
+      },
       lessons: [
         {
           id: 1001,
@@ -167,6 +172,10 @@ let webstore = new Vue({
             }
           }
         },
+
+        submitForm(){
+          alert('Order Submitted. Thank you!')
+        }
 
 
     
