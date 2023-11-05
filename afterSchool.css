@@ -205,3 +205,46 @@ body{
     width: 100%;
     margin-top: 30%;
 }
+
+#credentialHeading{
+    text-align: center; 
+    margin-top:10%;
+    font-size: 40px;
+    color: white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+}
+
+#credentialBox{
+    border: 1px solid black;
+    width:40%;
+    height: 200px;
+    margin-left:30%;
+    background-color: khaki;
+
+}
+#nameCredential{
+    position: absolute;
+    margin-left:0%;
+    margin-top: 4%;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: large;
+}
+
+#phoneCredential{
+    position: absolute;
+    margin-left:18%; 
+    margin-top: 4%;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: large;
+}
+
+#BothCredentials{
+    margin-left: 5%;
+    margin-top: 3%;
+}
+
+#orderInfoBox{
+    border: 1px solid black;
+
+}

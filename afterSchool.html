@@ -86,16 +86,23 @@
         <h3 style="margin-left:65%;">Total Price (Pounds): {{cartTotalPrice}}</h3>
 
         <!--customer credentials-->
-        <h3 style="text-align: center; margin-top:10%;">Please enter your credentials</h3>
-        <p style="margin-left: 30%; margin-top: 5%;">
+        <h3 id="credentialHeading">Please enter your credentials</h3>
+        <div id="credentialBox">
+          <div id="BothCredentials">
+        <div id="nameCredential">
           <strong>Name:</strong>
           <input v-model.trim="order.name">
-        </p>
-        <p style="margin-left:50%; margin-top: -2.5%;">
-          <strong>Phone Number:</strong>
+        </div>
+        <div id="phoneCredential">
+          <strong>Phone No.:</strong>
           <input v-model.trim="order.phone">
-        </p>
-        <div id="orderInfoTable">
+        </div>
+        </div>
+        </div>
+
+        <br><br><br>
+
+        <div id="orderInfoBox">
         <h2>Order Information</h2>
         <p>Name: {{order.name}}</p>
         <p>Phone Number: {{order.phone}}</p>
