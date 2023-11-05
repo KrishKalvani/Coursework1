@@ -99,15 +99,17 @@
         </div>
         </div>
         </div>
-
-        <br><br><br>
-
+        
+        <h2 id="orderInfoHeading">Order Information</h2>
         <div id="orderInfoBox">
-        <h2>Order Information</h2>
-        <p>Name: {{order.name}}</p>
-        <p>Phone Number: {{order.phone}}</p>
-        <button v-on:click="submitForm" :disabled="!credentialsValidation">Place Order</button>
+          <div id="orderInfoDetails">
+            <strong>Name (autofilled): </strong><p>{{order.name}}</p>
+            <strong>Phone Number (autofilled): </strong><p>{{order.phone}}</p>
+          </div>
         </div>
+        <br>
+        <p style="font-size: small;font-family: Arial, Helvetica, sans-serif; text-align: center; margin-left: 50%;">Make sure to enter the valid form<br>of credentials to place order</p>
+        <button id="PlaceOrderButton" v-on:click="submitForm" :disabled="!credentialsValidation">Place Order</button>
 
       </div>
 
