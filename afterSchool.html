@@ -51,7 +51,7 @@
           <main id="lessonContent">
             <p>Subject: {{ lesson.subject }}</p>
             <p>Location: {{ lesson.location }}</p>
-            <p>Price (Pounds): {{ lesson.price }}</p>
+            <p>Price (AED): {{ lesson.price }}</p>
             <p>Spaces: {{lesson.spaces-lesson.cartItemCount }}</p>
             <button style="margin-bottom: 60px;" id="addtocartButton" v-on:click="addToCart(lesson)" v-if="canAddToCart(lesson)">Add to Cart</button>
             <button id="disabledAddToCartButton" disabled="disabled" v-else>Sold <br> Out</button>
@@ -84,7 +84,7 @@
             </tr>
           </tbody>
         </table>
-        <h3 style="margin-left:65%; font-family: Arial, Helvetica, sans-serif;">Total Price (Pounds): {{cartTotalPrice}}</h3>
+        <h3 style="margin-left:65%; font-family: Arial, Helvetica, sans-serif;">Total Price (AED): {{cartTotalPrice}}</h3>
 
         <!--customer credentials-->
         <h3 id="credentialHeading">Please enter your credentials</h3>
