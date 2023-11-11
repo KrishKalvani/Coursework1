@@ -223,6 +223,12 @@ let webstore = new Vue({
       return this.nameValidation && this.phoneValidation;
     },
 
+
+    // lessonList(){
+    //   if(this.searchValue.trim().length>0){
+    //     return this.lessons.filter((lesson)=>lesson.subject.toLowerCase().includes(this.searchValue.trim().toLowerCase()))
+    //   }
+
     lessonList(){
       if(this.searchValue.trim().length>0){
         return (this.lessons.filter((lesson)=>{
