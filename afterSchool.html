@@ -62,7 +62,7 @@
           {{ index + 1}}. {{lesson.subject}}..{{lesson.location}}
         </div> -->
         </div>
-        <div v-else>No lesson found for: {{searchValue}}</div>
+        <div id="NoLessonFoundText" v-else>No lesson found for: {{searchValue}}</div>
      
       <div v-if="showLesson" id="lessonsGrid">
         <div id="lessonCard" v-for="lesson in lessonList" :key="lesson.id">

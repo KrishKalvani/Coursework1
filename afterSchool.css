@@ -277,3 +277,14 @@ body{ /*body css*/
     margin-top: -2.5%;
     margin-left: 82%;
 }
+
+#NoLessonFoundText{
+    position: absolute;
+    margin-left: 39%;
+    margin-top: 10%;
+    font-size: 40px;
+    color: white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+
+}
