@@ -8,8 +8,7 @@
   </head>
   <body>
     <div id="navigation" style="background-color: #110d78; ">
-        <!-- <div id="homeButton">HOME</div>
-        <div id="lessonsButton">LESSONS</div> -->
+        
        
       <a href="afterSchool.html"><img id="logo" src="../Coursework1/images/cw1logo.png"></a>
       <p style="position: absolute;margin-top: -110px;margin-left: 40%; color: white; font-family: Arial, Helvetica, sans-serif;">Search:</p><input id="searchInput" type="text" placeholder="Search lessons...">
@@ -17,15 +16,15 @@
     </div>
     <div id="app">
       <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3>
-      <div v-if="showLesson">
+      <div v-if="showLesson"> <!--v-if here also because I don't want the sort buttons to be there in the checkout page-->
         
       <div id="sortPriceButtons">
         <button v-on:click="sortByPrice('ascending')">Sort by Price (Low to High)</button>
         <button v-on:click="sortByPrice('descending')">Sort by Price (High to Low)</button>
       </div>
       <div id="sortSubButtons">
-        <button id="sortSubButton" v-on:click="sortAlphabetically('ascending')">Sort by Subject (A to Z)</button>
-        <button id="sortSubButton" v-on:click="sortAlphabetically('descending')">Sort by Subject (Z to A)</button>
+        <button id="sortSubButton" v-on:click="sortedSubjects('ascending')">Sort by Subject (A to Z)</button>
+        <button id="sortSubButton" v-on:click="sortedSubjects('descending')">Sort by Subject (Z to A)</button>
       </div>
       <div id="sortLocationButtons">
         <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('ascending')">Sort by Location (A to Z)</button>
@@ -35,7 +34,7 @@
       
     </div>
       <header>
-        <button id="checkOutButton" v-on:click="showCheckout" :disabled="cart.length===0">
+        <button id="checkOutButton" v-on:click="showCheckout" :disabled="cart.length===0 && showLesson">
           {{cartItemCount}}
           <span class="fas fa-cart-plus">Checkout</span>
       </button>
@@ -43,7 +42,6 @@
       </header>
      
       <div v-if="showLesson" id="lessonsGrid">
-      <!-- <div id="lessonsPageContent" v-for="lesson in lessons" :key="lesson.id"> -->
         <div id="lessonCard" v-for="lesson in lessons" :key="lesson.id">
           <figure>
             <img id="lessonPic" v-bind:src="lesson.image">
@@ -57,7 +55,6 @@
             <button id="disabledAddToCartButton" disabled="disabled" v-else>Sold <br> Out</button>
           </main>
         </div>
-      <!-- </div> -->
       </div>
 
       <div v-else>
