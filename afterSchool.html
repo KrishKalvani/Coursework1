@@ -7,14 +7,22 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
   </head>
   <body>
-    <div id="navigation" style="background-color: #110d78; ">
+    <!-- <div id="navigation" style="background-color: #110d78; ">
         
        
       <a href="afterSchool.html"><img id="logo" src="../Coursework1/images/cw1logo.png"></a>
       <p style="position: absolute;margin-top: -110px;margin-left: 40%; color: white; font-family: Arial, Helvetica, sans-serif;">Search:</p><input id="searchInput" type="text" placeholder="Search lessons...">
       <button id="searchButton" style="position:absolute;margin-top: 25px; margin-left:57%;">Search</button>
-    </div>
+    </div> -->
     <div id="app">
+      <div id="navigation" style="background-color: #110d78; ">
+        
+       
+        <a href="afterSchool.html"><img id="logo" src="../Coursework1/images/cw1logo.png"></a>
+        <p style="position: absolute;margin-top: -110px;margin-left: 40%; color: white; font-family: Arial, Helvetica, sans-serif;">Search:</p>
+        <input id="searchInput" v-model="searchValue" type="text" placeholder="Search lessons...">
+        <button id="searchButton" style="position:absolute;margin-top: 25px; margin-left:57%;">Search</button>
+      </div>
       <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3>
       <div v-if="showLesson"> <!--v-if here also because I don't want the sort buttons to be there in the checkout page-->
         
@@ -23,8 +31,8 @@
         <button v-on:click="sortByPrice('descending')">Sort by Price (High to Low)</button>
       </div>
       <div id="sortSubButtons">
-        <button id="sortSubButton" v-on:click="sortedSubjects('ascending')">Sort by Subject (A to Z)</button>
-        <button id="sortSubButton" v-on:click="sortedSubjects('descending')">Sort by Subject (Z to A)</button>
+        <button id="sortSubButton" v-on:click="sortAlphabetically('ascending')">Sort by Subject (A to Z)</button>
+        <button id="sortSubButton" v-on:click="sortAlphabetically('descending')">Sort by Subject (Z to A)</button>
       </div>
       <div id="sortLocationButtons">
         <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('ascending')">Sort by Location (A to Z)</button>
@@ -76,6 +84,7 @@
               <td>{{item.location}}</td>
               <td>{{item.price}}</td>
               <td>{{item.spaces-item.cartItemCount}} left</td>
+              <td>{{ item.spaces }} left</td>
               <td><button v-on:click="removeLessonFromCart(item)">Remove</button></td>
               
             </tr>

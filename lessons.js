@@ -4,6 +4,7 @@ let webstore = new Vue({
   data: { //this is where we add in our data object and in this we have the lessons array containing 10 lesson object. We also have the order object.
     sitename: 'AfterSchool', //displays the sitename in the vue js console
     showLesson: true, //initially lessons are displayed, if false then the checkout toggle appears and the lessons display hides
+    searchValue: '',
     order: { //order object that is setting the name and phone credentials to be filled by the user
       name: '',
       phone: null
