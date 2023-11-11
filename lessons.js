@@ -224,16 +224,18 @@ let webstore = new Vue({
     },
 
 
-    // lessonList(){
-    //   if(this.searchValue.trim().length>0){
+    // lessonList(){ //this searches the lesson by the subject
+    //   if(this.searchValue.trim().length>0){//if something is searched then searchValue is greater than 0
     //     return this.lessons.filter((lesson)=>lesson.subject.toLowerCase().includes(this.searchValue.trim().toLowerCase()))
-    //   }
+    //   }//we filter the lesson for each lesson if the lessons subject includes the value we searched, then return it.
 
-    lessonList(){
-      if(this.searchValue.trim().length>0){
-        return (this.lessons.filter((lesson)=>{
-          let lowerCaseSearch= this.searchValue.trim().toLowerCase();
-          let subjectSearch= lesson.subject.toLowerCase().includes(lowerCaseSearch);
+    lessonList(){ // i modified the previouse code to search by location as well
+      if(this.searchValue.trim().length>0){ //if the user searches something
+        return (this.lessons.filter((lesson)=>{// then return the following
+          let lowerCaseSearch= this.searchValue.trim().toLowerCase(); //this stores all the search values in lowerCase
+          let subjectSearch= lesson.subject.toLowerCase().includes(lowerCaseSearch);//searches by subject, we lowerCase the subject so we can get
+          //results for searching a small letter, we do the lowerCasing during the search (in the includes) so that we can search big letters, we just want to make it
+          //case insensitive
           let locationSearch= lesson.location.toLowerCase().includes(lowerCaseSearch);
           return subjectSearch||locationSearch;
 
@@ -244,6 +246,7 @@ let webstore = new Vue({
       return this.lessons;
 
     }
+    //reference for the searching: https://www.youtube.com/watch?v=0TMy-5srdlA&list=LL&index=1&t=818s
 
 
   },
