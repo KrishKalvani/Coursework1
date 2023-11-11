@@ -21,7 +21,15 @@
         <a href="afterSchool.html"><img id="logo" src="../Coursework1/images/cw1logo.png"></a>
         <p style="position: absolute;margin-top: -110px;margin-left: 40%; color: white; font-family: Arial, Helvetica, sans-serif;">Search:</p>
         <input id="searchInput" v-model="searchValue" type="text" placeholder="Search lessons...">
-        <button id="searchButton" style="position:absolute;margin-top: 25px; margin-left:57%;">Search</button>
+        <!--change made here-->
+        <div>
+        <div v-for="(lesson, index) in lessonList"
+        :key="index"
+        >
+          {{ index + 1}}. {{lesson.subject}}
+        </div>
+        </div>
+        <!-- <button id="searchButton" style="position:absolute;margin-top: 25px; margin-left:57%;">Search</button> -->
       </div>
       <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3>
       <div v-if="showLesson"> <!--v-if here also because I don't want the sort buttons to be there in the checkout page-->
