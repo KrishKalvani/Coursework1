@@ -22,13 +22,14 @@
         <p style="position: absolute;margin-top: -110px;margin-left: 40%; color: white; font-family: Arial, Helvetica, sans-serif;">Search:</p>
         <input id="searchInput" v-model="searchValue" type="text" placeholder="Search lessons...">
         <!--change made here-->
-        <div>
+        <div v-if="lessonList.length">
         <div v-for="(lesson, index) in lessonList"
         :key="index"
         >
           {{ index + 1}}. {{lesson.subject}}
         </div>
         </div>
+        <div v-else>No lesson found for: {{searchValue}}</div>
         <!-- <button id="searchButton" style="position:absolute;margin-top: 25px; margin-left:57%;">Search</button> -->
       </div>
       <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3>
