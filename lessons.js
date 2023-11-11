@@ -225,7 +225,7 @@ let webstore = new Vue({
 
     lessonList(){
       if(this.searchValue.trim().length>0){
-        return this.lessons.filter((lesson)=>lesson.subject.includes(this.searchValue.trim()))
+        return this.lessons.filter((lesson)=>lesson.subject.toLowerCase().includes(this.searchValue.trim().toLowerCase()))
       }
       return this.lessons;
 
