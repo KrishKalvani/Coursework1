@@ -144,7 +144,7 @@ let webstore = new Vue({
             return a.subject.localeCompare(b.subject); //localeCompare compares 2 strings and returns a value that shows their order
             //if one string (A) is before another string (B), it will return a -ve number and sort in ascending order
           } else if (order==='descending') { //Similar concept for (B) before (A) i.e., descending order
-            return b.location.localeCompare(a.subject);
+            return b.subject.localeCompare(a.subject);
           }
           return 0;
         });
@@ -161,7 +161,7 @@ let webstore = new Vue({
           return a.location.localeCompare(b.location); //localeCompare compares 2 strings and returns a value that shows their order
           //if one string (A) is before another string (B), it will return a -ve number and sort in ascending order
         } else if (order === 'descending') { //Similar concept for (B) before (A) i.e., descending order
-          return b.subject.localeCompare(a.location);
+          return b.location.localeCompare(a.location);
         }
         return 0;
       });
