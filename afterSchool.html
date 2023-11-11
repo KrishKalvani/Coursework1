@@ -23,10 +23,9 @@
         <input id="searchInput" v-model="searchValue" type="text" placeholder="Search lessons...">
         <!--change made here-->
         <div v-if="lessonList.length">
-        <div v-for="(lesson, index) in lessonList"
-        :key="index"
+        <div v-for="(lesson, index) in lessonList" :key="index"
         >
-          {{ index + 1}}. {{lesson.subject}}
+          {{ index + 1}}. {{lesson.subject}}..{{lesson.location}}
         </div>
         </div>
         <div v-else>No lesson found for: {{searchValue}}</div>
