@@ -107,7 +107,6 @@ let webstore = new Vue({
     ],
     cart: [], //this is the cart array that stores the IDs of the lessons and will be used to display the lessons in the cart page dynamically
     sortOrder: 'ascending',
-    // sortOrder2: 'ascending'
   },
   methods: {
     addToCart: function (lesson) { //this function adds the IDs of each lesson thats added in the cart
@@ -119,15 +118,16 @@ let webstore = new Vue({
 
     },
     showCheckout() {
-      this.showLesson = this.showLesson ? false : true;
+      this.showLesson = this.showLesson ? false : true; //this is triggered by v-show where it uses terinary operators so true
+      //will trigger the checkout and false will hide it and show the lessons
     },
     canAddToCart: function (lesson) { //checks if we can add to the cart or not, we put this in a v-if else so we can disable the add to cart button
       return lesson.spaces > lesson.cartItemCount; //checks if the spaces is more than the lessons that have been added
     },
     sortByPrice: function (order) {//order is the parameter where it will either be ascending or descending
-      this.sortOrder = order;
+      this.sortOrder = order; //storing it on sortOrder
       this.lessons.sort((a, b) => { //lets assume a and b are the objects (each lesson) in our lessons array, sort performs the ascending 
-        //and descending
+        //and descending/sorting
         if (order === 'ascending') {//if order is ascedning...
           return a.price - b.price;//display the first detected lesson minus the 2nd one
         } else if (order === 'descending') {// similarly for descending but 2nd lesson minus the 1st
@@ -172,7 +172,8 @@ let webstore = new Vue({
       this.lessons.sort((a, b) => { //lets assume a and b are the objects (each lesson) in our lessons array, sort performs the ascending 
         //and descending
         if (order === 'ascending') {//if order is ascedning...
-          return (a.spaces-a.cartItemCount) - (b.spaces-b.cartItemCount);//display the first detected lesson minus the 2nd one
+          return (a.spaces-a.cartItemCount) - (b.spaces-b.cartItemCount);//display the first detected lesson minus the 2nd one but here
+          //we dynamically check the cartItemCount's value to sort the spaces
         } else if (order === 'descending') {// similarly for descending but 2nd lesson minus the 1st
           return (b.spaces-b.cartItemCount)-(a.spaces-a.cartItemCount);
         }
@@ -194,7 +195,7 @@ let webstore = new Vue({
       }
     },
 
-    submitForm() {
+    submitForm() {//Triggered in the place order button only if the credentials are valid, it will alert this message
       alert('Order Submitted. Thank you!')
     }
 
@@ -204,9 +205,9 @@ let webstore = new Vue({
 
   computed: {
     cartItems: function () { //this is a function that is making an array - cartItems of lesson objects
-      // which will contain the IDs (and other details) of the lessons that got added into the cart array
+      // which will contain the IDs (and other details - the whole object) of the lessons that got added into the cart array
       return this.cart.map(itemID => { //here we 'map' the lessons in the cart array into the arguement itemID.
-        // So for each itemID (lesson ID) in the cart array, the map function will run
+        // So for each itemID (lesson ID) in the cart array, the map function will run to create the new array
         return this.lessons.find(lesson => lesson.id === itemID)
         //Inside the map function the 'find' searches for a lesson where 
         //the lesson.id from the lessons object is equal to the current itemID from the new array made
@@ -215,7 +216,7 @@ let webstore = new Vue({
       //reference: https://v2.vuejs.org/v2/guide/list
 
     },
-    cartItemCount: function () {
+    cartItemCount: function () {//this is just giving us the total number of lessons in the cart, this is also present for each lesson object
       return this.cart.length || '';
     },
     cartTotalPrice: function () {
@@ -226,13 +227,13 @@ let webstore = new Vue({
       //reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
     },
 
-    nameValidation: function () {
+    nameValidation: function () {//this checks if we are typing only letters
       return /^[A-Za-z\s]+$/.test(this.order.name);
     },
-    phoneValidation: function () {
+    phoneValidation: function () { //this checks if we are typing only numbers
       return /^[0-9]+$/.test(this.order.phone);
     },
-    credentialsValidation: function () {
+    credentialsValidation: function () { //this checks if both are correct and then disabled if its not correct, from the html side
       return this.nameValidation && this.phoneValidation;
     },
 
@@ -256,7 +257,7 @@ let webstore = new Vue({
         
         
       }
-      return this.lessons;
+      return this.lessons;//this displays all the lessons at default when nothing is searched
 
     }
     //reference for the searching: https://www.youtube.com/watch?v=0TMy-5srdlA&list=LL&index=1&t=818s
