@@ -1,19 +1,13 @@
 <!DOCTYPE html>
+<!--start of html page-->
 <html>
   <head>
     <title>After School</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
-    <link rel="stylesheet" href="../Coursework1/afterSchool.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script> <!--this is the link to connect to the vue.js devtools-->
+    <link rel="stylesheet" href="../Coursework1/afterSchool.css"><!--link for CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-  </head>
+  </head><!--above is the link for using the font awesome cart icon-->
   <body>
-    <!-- <div id="navigation" style="background-color: #110d78; ">
-        
-       
-      <a href="afterSchool.html"><img id="logo" src="../Coursework1/images/cw1logo.png"></a>
-      <p style="position: absolute;margin-top: -110px;margin-left: 40%; color: white; font-family: Arial, Helvetica, sans-serif;">Search:</p><input id="searchInput" type="text" placeholder="Search lessons...">
-      <button id="searchButton" style="position:absolute;margin-top: 25px; margin-left:57%;">Search</button>
-    </div> -->
     <div id="app">
       <div id="navigation" style="background-color: #110d78; ">
         
@@ -22,19 +16,11 @@
         <p style="position: absolute;margin-top: -110px;margin-left: 40%; color: white; font-family: Arial, Helvetica, sans-serif;">Search:</p>
         <input id="searchInput" v-model="searchValue" type="text" placeholder="Search lessons...">
         <!--change made here-->
-        <!-- <div v-if="lessonList.length">
-        <div v-for="(lesson, index) in lessonList" :key="index"
-        >
-          {{ index + 1}}. {{lesson.subject}}..{{lesson.location}}
-        </div>
-        </div>
-        <div v-else>No lesson found for: {{searchValue}}</div> -->
-        <!-- <button id="searchButton" style="position:absolute;margin-top: 25px; margin-left:57%;">Search</button> -->
       </div>
-      <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3>
+      <h3 id="welcomeText">Welcome! Buy any lesson you want and pursue your studies <em>AfterSchool</em></h3><!--welcome message-->
       <div v-if="showLesson"> <!--v-if here also because I don't want the sort buttons to be there in the checkout page-->
         
-      <div id="sortPriceButtons">
+      <div id="sortPriceButtons"><!--here are all the sorting buttons-->
         <button v-on:click="sortByPrice('ascending')">Sort by Price (Low to High)</button>
         <button v-on:click="sortByPrice('descending')">Sort by Price (High to Low)</button>
       </div>
@@ -53,39 +39,44 @@
       
       
     </div>
-      <header>
+      <header><!--Checkout button-->
         <button id="checkOutButton" v-on:click="showCheckout" :disabled="cart.length===0 && showLesson">
           {{cartItemCount}}
-          <span class="fas fa-cart-plus">Checkout</span>
+          <span class="fas fa-cart-plus">Checkout</span><!--checkout icon-->
       </button>
         
       </header>
 
-      <div v-if="lessonList.length">
+      <div v-if="lessonList.length"><!--if searchVal isn't containing any exisitng lesson-->
         <!-- <div v-for="(lesson, index) in lessonList" :key="index">
           {{ index + 1}}. {{lesson.subject}}..{{lesson.location}}
         </div> -->
         </div>
-        <div id="NoLessonFoundText" v-else>No lesson found for: {{searchValue}}</div>
+        <div id="NoLessonFoundText" v-else>No lesson found for: {{searchValue}}</div><!--else, then no lesson found-->
      
-      <div v-if="showLesson" id="lessonsGrid">
-        <div id="lessonCard" v-for="lesson in lessonList" :key="lesson.id">
+      <div v-if="showLesson" id="lessonsGrid"><!--v-if to display between lessons and checkout-->
+        <!--a whole lesson-->
+        <div id="lessonCard" v-for="lesson in lessonList" :key="lesson.id"><!--lessonCard for CSS, v-for to iterate over the lessons array (now lessons list array) to display the lessons-->
           <figure>
             <img id="lessonPic" v-bind:src="lesson.image">
           </figure>
-          <main id="lessonContent">
+          <main id="lessonContent"><!--lesson details-->
             <p>Subject: {{ lesson.subject }}</p>
             <p>Location: {{ lesson.location }}</p>
             <p>Price (AED): {{ lesson.price }}</p>
             <p>Spaces: {{lesson.spaces-lesson.cartItemCount }}</p>
+            <!--this buttons check if we can add to the cart-->
             <button style="margin-bottom: 60px;" id="addtocartButton" v-on:click="addToCart(lesson)" v-if="canAddToCart(lesson)">Add to Cart</button>
-            <button id="disabledAddToCartButton" disabled="disabled" v-else>Sold <br> Out</button>
+            <button id="disabledAddToCartButton" disabled="disabled" v-else>Sold <br> Out</button><!--sold out if the button gets disabled meaning we can't add to the cart anymore-->
           </main>
         </div>
       </div>
 
-      <div v-else>
+
+      <!--checkout page-->
+      <div v-else><!--v-else to display the checkout if the button is clicked-->
         <h2 id="checkOutHeading">Checkout</h2>
+        <!--table to display our added lessons-->
         <table id="checkoutTable">
           <thead>
             <tr>
@@ -96,6 +87,8 @@
               <th>Stock</th>
             </tr>
           </thead>
+          <!--this dynamically adds and removes lessons from the cart using the v-for,
+          it iterates through the table to display the added lessons-->
           <tbody>
             <tr v-for="item in cartItems" :key="item.id">
               <td style="width:10%;"><img :src="item.image"></td>
@@ -125,6 +118,7 @@
         </div>
         </div>
         
+        <!--order info auto-filled credentials-->
         <h2 id="orderInfoHeading">Order Information</h2>
         <div id="orderInfoBox">
           <div id="orderInfoDetails">
@@ -134,14 +128,16 @@
         </div>
         <br>
         <p style="font-size: small;font-family: Arial, Helvetica, sans-serif; text-align: center; margin-left: 50%;">Make sure to enter the valid form<br>of credentials to place order</p>
-        <button id="PlaceOrderButton" v-on:click="submitForm" :disabled="!credentialsValidation">Place Order</button>
+        <button id="PlaceOrderButton" v-on:click="submitForm" :disabled="!credentialsValidation">Place Order</button><!--button disables if the credentialsValidation is not true-->
 
       </div>
 
     </div>
+    <!--footer-->
     <div id="footer">
       <p style="margin-left: 45%;">Web page made by Krish Kalvani</p>
     </div>
     <script src="../Coursework1/lessons.js"></script>
   </body>
+  <!--end of html page-->
 </html>
