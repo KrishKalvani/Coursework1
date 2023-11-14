@@ -15,25 +15,25 @@ let webstore = new Vue({
         id: 1001,
         image: "images/MathIcon.jpg",
         subject: "Math",
-        location: "London",
+        location: "Nahda",
         price: 100,
         spaces: 5,
         cartItemCount: 0 //this is there for every lesson object because I want to track whether this specific lesson is there in the cart
       },
       {
         id: 1002,
-        image: "images/bioIcon.png",
-        subject: "Biology",
-        location: "London",
+        image: "images/MicroBio.png",
+        subject: "Microbiology",
+        location: "Qouz",
         price: 90,
         spaces: 5,
         cartItemCount: 0 //its set to 0 because initially there is nothing in the cart at first
       },
       {
         id: 1003,
-        image: "images/chemistryIcon.png",
-        subject: "Chemistry",
-        location: "Oxford",
+        image: "images/organicChem.png",
+        subject: "Organic Chemistry",
+        location: "Barsha",
         price: 150,
         spaces: 5,
         cartItemCount: 0
@@ -42,25 +42,25 @@ let webstore = new Vue({
         id: 1004,
         image: "images/physIcon.png",
         subject: "Physics",
-        location: "Oxford",
+        location: "Dubai Museum",
         price: 100,
         spaces: 5,
         cartItemCount: 0
       },
       {
         id: 1005,
-        image: "images/MathIcon.jpg",
-        subject: "Math",
-        location: "Oxford",
+        image: "images/advancedMath.png",
+        subject: "Advanced Math",
+        location: "Knowledge Village",
         price: 120,
         spaces: 5,
         cartItemCount: 0
       },
       {
         id: 1006,
-        image: "images/engIcon.png",
-        subject: "English",
-        location: "London",
+        image: "images/advancedEnglish.jpg",
+        subject: "Advanced English",
+        location: "Buhairah",
         price: 80,
         spaces: 5,
         cartItemCount: 0
@@ -69,7 +69,7 @@ let webstore = new Vue({
         id: 1007,
         image: "images/musicIcon.png",
         subject: "Music",
-        location: "Bristol",
+        location: "Dubai Opera",
         price: 90,
         spaces: 5,
         cartItemCount: 0
@@ -78,8 +78,8 @@ let webstore = new Vue({
         id: 1008,
         image: "images/engIcon.png",
         subject: "English",
-        location: "York",
-        price: 80,
+        location: "City Walk",
+        price: 70,
         spaces: 5,
         cartItemCount: 0
 
@@ -88,7 +88,7 @@ let webstore = new Vue({
         id: 1009,
         image: "images/chemistryIcon.png",
         subject: "Chemistry",
-        location: "London",
+        location: "Jumeriah",
         price: 100,
         spaces: 5,
         cartItemCount: 0
@@ -97,7 +97,7 @@ let webstore = new Vue({
         id: 1010,
         image: "images/bioIcon.png",
         subject: "Biology",
-        location: "Oxford",
+        location: "Rolla",
         price: 100,
         spaces: 5,
         cartItemCount: 0
