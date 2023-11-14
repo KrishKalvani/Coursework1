@@ -46,6 +46,10 @@
         <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('ascending')">Sort by Location (A to Z)</button>
         <button id="sortLocButtons" v-on:click="sortLocationAlphabetically('descending')">Sort by Location (Z to A)</button>
       </div>
+      <div id="sortSpacesButtons">
+        <button v-on:click="sortBySpaces('ascending')">Sort by Spaces (Low to High)</button>
+        <button v-on:click="sortBySpaces('descending')">Sort by Spaces (High to Low)</button>
+      </div>
       
       
     </div>
