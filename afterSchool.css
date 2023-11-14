@@ -20,19 +20,26 @@ body{ /*body css*/
 
 #sortPriceButtons{ /*positioning the sort price button*/
     position: absolute;
-    margin-left:6%;
+    margin-left:2%;
     margin-top: -2%;
 }
 #sortSubButtons{ /*positioning the sort subject button*/
     position: absolute;
     margin-top: -2%;
-    margin-left: 40%;
+    margin-left: 28%;
 }
 
 #sortLocationButtons{ /*positioning the sort location button*/
     position: absolute;
     margin-top: -2%;
-    margin-left: 71.2%;
+    margin-left: 51%;
+
+}
+
+#sortSpacesButtons{
+    position: absolute;
+    margin-top: -2%;
+    margin-left: 74%;
 
 }
 
