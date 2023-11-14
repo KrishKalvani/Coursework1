@@ -167,6 +167,19 @@ let webstore = new Vue({
       });
     },
 
+    sortBySpaces: function (order) {//order is the parameter where it will either be ascending or descending
+      this.sortOrder = order;
+      this.lessons.sort((a, b) => { //lets assume a and b are the objects (each lesson) in our lessons array, sort performs the ascending 
+        //and descending
+        if (order === 'ascending') {//if order is ascedning...
+          return (a.spaces-a.cartItemCount) - (b.spaces-b.cartItemCount);//display the first detected lesson minus the 2nd one
+        } else if (order === 'descending') {// similarly for descending but 2nd lesson minus the 1st
+          return (b.spaces-b.cartItemCount)-(a.spaces-a.cartItemCount);
+        }
+        return 0; // this will not display any change if theres no ascending or descending detected
+      });
+    },
+
     removeLessonFromCart(lesson) {
       //this function is used for removing lessons from the cart
       let lessonIndexInCart = this.cart.indexOf(lesson.id);//this is finding the index of the lesson thats in the cart
