@@ -106,7 +106,7 @@ let webstore = new Vue({
 
     ],
     cart: [], //this is the cart array that stores the IDs of the lessons and will be used to display the lessons in the cart page dynamically
-    sortOrder: 'ascending',
+    sortOrder: 'ascending',//this will change to descending and back to ascending depending on the button clicked in the html page
   },
   methods: {
     addToCart: function (lesson) { //this function adds the IDs of each lesson thats added in the cart
@@ -137,7 +137,7 @@ let webstore = new Vue({
       });
     },
 
-    sortAlphabetically: function (order){
+    sortAlphabetically: function (order){//sorting the subjects, using localeCompare as its used for arrange strings
         this.sortOrder= order;
         this.lessons.sort((a,b)=>{
           if(order==='ascending'){
@@ -154,7 +154,7 @@ let webstore = new Vue({
 
 
 
-    sortLocationAlphabetically: function (order) {
+    sortLocationAlphabetically: function (order) {//sorting the location, using localeCompare as its used for arrange strings
       this.sortOrder = order;
       this.lessons.sort((a, b) => {
         if (order === 'ascending') {
@@ -173,7 +173,7 @@ let webstore = new Vue({
         //and descending
         if (order === 'ascending') {//if order is ascedning...
           return (a.spaces-a.cartItemCount) - (b.spaces-b.cartItemCount);//display the first detected lesson minus the 2nd one but here
-          //we dynamically check the cartItemCount's value to sort the spaces
+          //we dynamically check the cartItemCount's value (from each lesson) to sort the spaces
         } else if (order === 'descending') {// similarly for descending but 2nd lesson minus the 1st
           return (b.spaces-b.cartItemCount)-(a.spaces-a.cartItemCount);
         }
