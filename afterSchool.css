@@ -126,14 +126,6 @@ body{ /*body css*/
     font-weight: bold;
 }
 
-/* #lessonCard{
-    border:1px solid black;
-    width: 20%;
-    height: 30%;
-    margin-left: 5%;
-    background-color: #e6edbe;
-    
-} */
 
 #addtocartButton{ /*positioning and designing each addtocart button in each lesson*/
     margin-left:-83%; 
@@ -165,22 +157,7 @@ body{ /*body css*/
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: #9692f7;
-    /* bottom: 20px;
-    right: 20px; 
-    z-index: 1; */
-
 }
-/* #app {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  } */
-  /* #app {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    
-    grid-gap: 10px; 
-  } */
 
   #lessonsGrid { /*this sets up the display of the lessons using grid, it arranges it as 5 lessons per row*/
     display: grid;
