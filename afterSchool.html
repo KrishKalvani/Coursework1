@@ -91,7 +91,9 @@
           <!--this dynamically adds and removes lessons from the cart using the v-for,
           it iterates through the table to display the added lessons. It connected with the cartItems computed property-->
           <tbody>
-            <tr v-for="item in cartItems" :key="item.id">
+            <tr v-for="(item,index) in cartItems" :key="item.id + '-' + index"> <!--index is here because it needs to uniquely identify the lessons added in the cart
+            including the lessons that have been added twice with the same lesson.id, so we append the index of our element i.e., lessons array to the key which makes it unique
+          hence we update the DOM efficiently-->
               <td style="width:10%;"><img :src="item.image"></td>
               <td>{{item.subject}}</td>
               <td>{{item.location}}</td>
