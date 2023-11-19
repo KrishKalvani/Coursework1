@@ -196,7 +196,11 @@ let webstore = new Vue({
     },
 
     submitForm() {//Triggered in the place order button only if the credentials are valid, it will alert this message
-      alert('Order Submitted. Thank you!')
+      if(this.cart.length===0){
+        alert('Please add lessons to your cart to place an order.');
+      }else{
+      alert('Order Submitted. Thank you!');
+      }
     }
 
 
